@@ -7,6 +7,9 @@ puts "🌱 Seeding spices..."
 
     Year.create(year: 2021)
 
+
+    Spending.create(description: "pizza", amount: 100.43, user_id: 2, month_id: 9, category_id: 2, date: "09/24/2021")
+
     Month.create(month: "January", year_id: 1)
     Month.create(month: "February", year_id: 1)
     Month.create(month: "March", year_id: 1)
