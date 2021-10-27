@@ -7,4 +7,5 @@ class BudgetPlanController < ApplicationController
         data.to_json
     end
 
+    
 end
