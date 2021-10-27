@@ -7,19 +7,19 @@ class SpendingController < ApplicationController
         data.to_json
     end
 
-    post '/spending/:user_id' do
-        spending = Spending.create(description: params[:amount], amount: params[:amount], user: params[:user_id], month: params[:month_id], date: params[:date], category_id: params[:category_id] )
+    post '/spending/:spending_id' do
+        spending = Spending.create(description: params[:amount], amount: params[:amount], user_id: params[:user_id], month_id: params[:month_id], date: params[:date], category_id: params[:category_id] )
         spending.to_json
     end
 
-    patch '/spending/:id/edit'do
-        spending = Spending.find(params[:id])
-        spending.update(amount: params[:amount])
-        spneding.to_json
+    patch '/spending/:spending_id/edit'do
+        spending = Spending.find(params[:spending_id])
+        spending.update(amount: params[:amount], description: params[:description], date: params[:date], category_id: params[:category_id])
+        spending.to_json
     end
 
-    delete '/spending/:id' do
-        spending = Spending.find(params[:id])
+    delete '/spending/:spending_id' do
+        spending = Spending.find(params[:spending_id])
         spending.destroy
     end
 

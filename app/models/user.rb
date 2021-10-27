@@ -16,7 +16,10 @@ class User < ActiveRecord::Base
                 amount: spending.amount,
                 id: spending.id,
                 date: spending.date,
-                category: spending.category.description
+                category: spending.category.description,
+                category_id: spending.category_id,
+                month_id: spending.month_id,
+                user_id: spending.user_id
             }
         end
     end
