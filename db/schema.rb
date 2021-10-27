@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_26_145118) do
+ActiveRecord::Schema.define(version: 2021_10_27_000338) do
+
+  create_table "budget_plans", force: :cascade do |t|
+    t.integer "user_id"
+    t.float "housing_percentage"
+    t.float "transport_percentage"
+    t.float "food_percentage"
+    t.float "utility_percentage"
+    t.float "insurance_percentage"
+    t.float "emergency_percentage"
+    t.float "discretionary_percentage"
+    t.float "other_percentage"
+  end
 
   create_table "categories", force: :cascade do |t|
     t.string "description"
