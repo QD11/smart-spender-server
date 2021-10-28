@@ -8,14 +8,16 @@ class SpendingController < ApplicationController
     end
 
     post '/spending/:spending_id' do
-        spending = Spending.create(description: params[:amount], amount: params[:amount], user_id: params[:user_id], month_id: params[:month_id], date: params[:date], category_id: params[:category_id])
-        spending.to_json
+        spending = Spending.create(description: params[:description], amount: params[:amount], user_id: params[:user_id], date: params[:date], category_id: params[:category_id])
+        data = spending.convert_to_category_hash
+        data.to_json
     end
 
-    patch '/spending/:spending_id/edit'do
+    patch '/spending/:spending_id' do
         spending = Spending.find(params[:spending_id])
         spending.update(amount: params[:amount], description: params[:description], date: params[:date], category_id: params[:category_id])
-        spending.to_json
+        category_as_hash = spending.convert_to_category_hash
+        category_as_hash.to_json
     end
 
     delete '/spending/:spending_id' do
