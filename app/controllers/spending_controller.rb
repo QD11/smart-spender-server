@@ -13,10 +13,11 @@ class SpendingController < ApplicationController
         data.to_json
     end
 
-    patch '/spending/:spending_id/edit'do
+    patch '/spending/:spending_id' do
         spending = Spending.find(params[:spending_id])
         spending.update(amount: params[:amount], description: params[:description], date: params[:date], category_id: params[:category_id])
-        spending.to_json
+        category_as_hash = spending.convert_to_category_hash
+        category_as_hash.to_json
     end
 
     delete '/spending/:spending_id' do
