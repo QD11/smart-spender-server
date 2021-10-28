@@ -12,5 +12,4 @@ class UserController < ApplicationController
         # user.autheticate(params[:password])
     end
 
-
 end
