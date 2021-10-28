@@ -16,6 +16,4 @@ run ApplicationController
 use UserController
 use CategoryController
 use SpendingController
-use YearController
-use MonthController
 use BudgetPlanController
