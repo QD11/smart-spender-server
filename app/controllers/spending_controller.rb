@@ -8,8 +8,9 @@ class SpendingController < ApplicationController
     end
 
     post '/spending/:spending_id' do
-        spending = Spending.create(description: params[:amount], amount: params[:amount], user_id: params[:user_id], month_id: params[:month_id], date: params[:date], category_id: params[:category_id])
-        spending.to_json
+        spending = Spending.create(description: params[:description], amount: params[:amount], user_id: params[:user_id], date: params[:date], category_id: params[:category_id])
+        data = spending.convert_to_category_hash
+        data.to_json
     end
 
     patch '/spending/:spending_id/edit'do
