@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_29_025855) do
+ActiveRecord::Schema.define(version: 2021_10_29_042013) do
 
   create_table "budget_plans", force: :cascade do |t|
     t.integer "user_id"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 2021_10_29_025855) do
     t.float "emergency_percentage"
     t.float "discretionary_percentage"
     t.float "other_percentage"
+    t.float "balance"
   end
 
   create_table "categories", force: :cascade do |t|
