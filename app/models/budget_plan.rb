@@ -1,9 +1,11 @@
 class BudgetPlan < ActiveRecord::Base 
     belongs_to :user
 
+    require "date"
+
     def add_all_money_by_category
         userID = self.user_id 
-        user_specific_spendings = Spending.where(user_id: userID)
+        user_specific_spendings = Spending.where(user_id: userID).where("cast(strftime('%m', date) as int) = ?", Date.today.strftime("%m").to_i)
         if user_specific_spendings.empty?
             return [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
         end

@@ -23,4 +23,22 @@ class SpendingController < ApplicationController
         spending.destroy
     end
 
+    get '/spending/sixmonths/:user_id' do
+        user = User.find(params[:user_id])
+        data = user.get_spendings_last_six_months
+        data.to_json
+    end
+
+    get '/spending/recent/:user_id' do
+        user = User.find(params[:user_id])
+        data = user.get_latest_spendings
+        data.to_json
+    end
+
+    get '/spending/currentmonthcategories/:user_id' do
+        user = BudgetPlan.find_by(user_id: params[:user_id])
+        data = user.add_all_money_by_category
+        data.to_json
+    end
+
 end
