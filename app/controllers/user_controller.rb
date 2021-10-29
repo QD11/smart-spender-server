@@ -20,8 +20,4 @@ class UserController < ApplicationController
             return user.to_json
         end
     end
-<<<<<<< HEAD
-
-=======
->>>>>>> 36726514c2d1803243e95f3ca470de7d20a1bb85
 end
