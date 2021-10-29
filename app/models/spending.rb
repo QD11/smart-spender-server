@@ -7,7 +7,8 @@ class Spending < ActiveRecord::Base
          amount: self.amount,
          category: self.category.description,
          date: self.date,
-         description: self.description
+         description: self.description,
+         id: self.id
       }
    end
 
