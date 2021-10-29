@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
     has_secure_password 
 
     def renders_user_spendings
-        user_specific_spendings = Spending.where(user_id: self.id)
+        user_specific_spendings = Spending.where(user_id: self.id).order(:date).reverse
         data = user_specific_spendings.map do |spending|
             {
                 description: spending.description,
@@ -49,13 +49,25 @@ class User < ActiveRecord::Base
     end
 
     def get_latest_spendings
-        spendings_user = Spending.where(user_id: self.id).order(:date).first(3)
+        spendings_user = Spending.where(user_id: self.id).order(:date).reverse.first(3)
         data = spendings_user.map do |spending|
             {
                 description: spending.description,
                 amount: spending.amount,
                 category: spending.category.description,
                 date: spending.date,
+            }
+        end
+    end
+
+    def get_ordered_spendings
+        spendings_user = Spending.where(user_id: self.id).order(:date).reverse
+        data = spendings_user.map do |spending|
+            {
+                description: spending.description,
+                amount: spending.amount,
+                date: spending.date,
+                category: spending.category.description,
             }
         end
     end
