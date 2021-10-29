@@ -35,4 +35,10 @@ class SpendingController < ApplicationController
         data.to_json
     end
 
+    get '/spending/currentmonthcategories/:user_id' do
+        user = BudgetPlan.find_by(user_id: params[:user_id])
+        data = user.add_all_money_by_category
+        data.to_json
+    end
+
 end
