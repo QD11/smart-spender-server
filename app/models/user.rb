@@ -56,6 +56,7 @@ class User < ActiveRecord::Base
                 amount: spending.amount,
                 category: spending.category.description,
                 date: spending.date,
+                id: spending.id,
             }
         end
     end
@@ -68,6 +69,7 @@ class User < ActiveRecord::Base
                 amount: spending.amount,
                 date: spending.date,
                 category: spending.category.description,
+                id: spending.id
             }
         end
     end

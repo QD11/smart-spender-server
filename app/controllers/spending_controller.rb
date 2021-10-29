@@ -7,7 +7,7 @@ class SpendingController < ApplicationController
         data.to_json
     end
 
-    post '/spending/:spending_id' do
+    post '/spending/:user_id' do
         spending = Spending.create(description: params[:description], amount: params[:amount], user_id: params[:user_id], date: params[:date], category_id: params[:category_id]) 
         user1 = spending.user
         data = user1.get_ordered_spendings
