@@ -35,7 +35,7 @@ class User < ActiveRecord::Base
             })
         end
         spending_by_month = month_year.map do |element|
-            Spending.where("cast(strftime('%m', date) as int) = ?", element[:month]).where("cast(strftime('%Y', date) as int) = ?", element[:year]).where(user_id: self.id).sum(:amount)
+            Spending.where("cast(strftime('%m', date) as int) = ?", element[:month]).where("cast(strftime('%Y', date) as int) = ?", element[:year]).sum(:amount)
         end
         month_year_spending = []
         6.times do |i|
