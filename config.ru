@@ -1,4 +1,10 @@
 require_relative "./config/environment"
+require './server'
+
+# disable buffering for Heroku Logplex
+$stdout.sync = true
+
+run Sinatra::Application  
 
 # Allow CORS (Cross-Origin Resource Sharing) requests
 use Rack::Cors do
