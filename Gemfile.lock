@@ -35,13 +35,10 @@ GEM
     minitest (5.14.4)
     mustermann (1.1.1)
       ruby2_keywords (~> 0.0.1)
-    nio4r (2.5.8)
     pg (1.2.3)
     pry (0.14.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
-    puma (5.5.2)
-      nio4r (~> 2.0)
     rack (2.2.3)
     rack-contrib (2.3.0)
       rack (~> 2.0)
@@ -81,7 +78,6 @@ GEM
     sinatra-activerecord (2.0.23)
       activerecord (>= 4.1)
       sinatra (>= 1.0)
-    sqlite3 (1.4.2)
     thin (1.8.1)
       daemons (~> 1.0, >= 1.0.9)
       eventmachine (~> 1.0, >= 1.0.4)
@@ -92,18 +88,15 @@ GEM
     zeitwerk (2.5.1)
 
 PLATFORMS
-  ruby
-  x86_64-darwin-19
   x86_64-linux
 
 DEPENDENCIES
-  activerecord (~> 6.1)
+  activerecord
   bcrypt
   database_cleaner (~> 2.0)
   date
   pg
   pry (~> 0.14.1)
-  puma
   rack-contrib (~> 2.3)
   rack-cors (~> 1.1)
   rack-test (~> 1.1)
@@ -113,8 +106,7 @@ DEPENDENCIES
   rspec (~> 3.10)
   rspec-json_expectations (~> 2.2)
   sinatra (~> 2.1)
-  sinatra-activerecord (~> 2.0)
-  sqlite3 (~> 1.4)
+  sinatra-activerecord
   thin (~> 1.8)
 
 BUNDLED WITH
