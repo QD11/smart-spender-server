@@ -3,7 +3,7 @@ class UserController < ApplicationController
 
     get "/all_users" do
         users = User.all
-        uers.to_json
+        users.to_json
     end
 
     post "/login" do
