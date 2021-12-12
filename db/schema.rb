@@ -29,10 +29,16 @@ ActiveRecord::Schema.define(version: 2021_10_29_042013) do
     t.string "description"
   end
 
+  create_table "months", force: :cascade do |t|
+    t.string "month"
+    t.integer "year_id"
+  end
+
   create_table "spendings", force: :cascade do |t|
     t.string "description"
     t.float "amount"
     t.integer "user_id"
+    t.integer "month_id"
     t.integer "category_id"
     t.date "date"
   end
@@ -41,6 +47,11 @@ ActiveRecord::Schema.define(version: 2021_10_29_042013) do
     t.string "full_name"
     t.string "email"
     t.string "password_digest"
+    t.float "balance"
+  end
+
+  create_table "years", force: :cascade do |t|
+    t.integer "year"
   end
 
 end

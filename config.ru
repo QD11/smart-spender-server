@@ -1,5 +1,5 @@
 require_relative "./config/environment"
-require './server'
+# require './server'
 
 # disable buffering for Heroku Logplex
 $stdout.sync = true

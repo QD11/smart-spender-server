@@ -31,12 +31,12 @@ gem "rake", "~> 13.0"
 # Provides functionality to interact with a SQLite3 database
 gem "sqlite3", "~> 1.4"
 
-gem "puma"
+# gem "puma"
 
 # Require all files in a folder
 gem "require_all", "~> 3.0"
 
-# gem 'pg', :group => :production
+gem 'pg'
 
 # These gems will only be used when we are running the application locally
 group :development do
@@ -47,9 +47,9 @@ group :development do
   gem "rerun"
 end
 
-group :production do
-  gem 'pg'
-end
+# group :production do
+#   gem 'pg'
+# end
 
 gem "bcrypt"
 
