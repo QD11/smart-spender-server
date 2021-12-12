@@ -1,6 +1,11 @@
 class UserController < ApplicationController
     set :default_content_type, 'application/json'
 
+    get "/all_users" do
+        users = User.all
+        uers.to_json
+    end
+
     post "/login" do
         user = User.find_by(email: params[:email])
         password = user.authenticate(params[:password])
