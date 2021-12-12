@@ -1,6 +1,7 @@
 class Spending < ActiveRecord::Base
    belongs_to :user
    belongs_to :category
+   belongs_to :month
 
    def convert_to_category_hash
       data = {

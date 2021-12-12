@@ -1,14 +1,19 @@
 puts "🌱 Seeding spices..."
     User.create(full_name: "Adam J", email: "Adamj@fakedomain.com", password_digest: "12234", balance: 1000.43)
 
+    Category.create(description: "Housing")
+    Category.create(description: "Transportation")
+    Category.create(description: "Food")
+    Category.create(description: "Utility")
+    Category.create(description: "Insurance")
+    Category.create(description: "Emergency")
     Category.create(description: "Discretionary")
-    Category.create(description: "Grocery")
     Category.create(description: "Other")
 
     Year.create(year: 2021)
 
 
-    Spending.create(description: "pizza", amount: 100.43, user_id: 2, month_id: 9, category_id: 2, date: "09/24/2021")
+    # Spending.create(description: "pizza", amount: 100.43, user_id: 2, month_id: 9, category_id: 2, date: "09/24/2021")
 
     Month.create(month: "January", year_id: 1)
     Month.create(month: "February", year_id: 1)
